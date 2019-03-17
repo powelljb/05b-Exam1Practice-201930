@@ -9,8 +9,8 @@ These problems illustrate concepts that previous problems have not emphasized:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jake Powell.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 import testing_helper
@@ -25,7 +25,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the green doc-string for the:
+# DONE: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -189,7 +189,7 @@ def problem0a(n):
            since (2 + 4 + 6) is 12, which is NOT odd.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ###########################################################################
@@ -206,6 +206,12 @@ def problem0a(n):
     #        Simply try a few examples to convince yourself of this.
     #        ASK FOR HELP if you do not understand this hint.
     # -------------------------------------------------------------------------
+    x = sum_of_digits(n)
+    if x % 2 == 0:
+        return False
+    else:
+        return True
+
 
 
 def run_test_problem0b():
@@ -262,7 +268,7 @@ def problem0b(n):
            since there are 46 primes between 2 and 200.
      """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ###########################################################################
@@ -271,6 +277,17 @@ def problem0b(n):
     #    **  use (call) the   is_prime   function that is DEFINED ABOVE.
     ###########################################################################
     # ------------------------------------------------------------------
+    total = 0
+    count = 0
+    for k in range(2,n+1):
+        a = is_prime(k)
+        if a == True:
+            count = count+1
+        else:
+            total = total+1
+    return count
+
+
 
 
 def run_test_problem0c():
@@ -330,7 +347,7 @@ def problem0c(circle, n, window):
       :type window: rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ###########################################################################
@@ -338,6 +355,41 @@ def problem0c(circle, n, window):
     #   renders with a half-second pause after rendering.
     ###########################################################################
     # -------------------------------------------------------------------------
+    circle.attach_to(window)
+    window.render(.5)
+    radius = circle.radius
+    x = circle.center.x + 2*radius
+    y = circle.center.y
+    center = rg.Point(x,y)
+    for k in range(n):
+        circle1 = rg.Circle(center,radius)
+        center.x = center.x + 2*radius
+        center.y = center.y
+        circle1.attach_to(window)
+        window.render(.5)
+
+    radius = circle.radius
+    center = circle.center
+    # count = 0
+    # center = circle.center
+    # radius = circle.radius
+    # for k in range(n+1):
+    #     circle.attach_to(window)
+    #     center.x = center.x + 2*radius
+    #     circle.fill_color = ''
+    #     circle = rg.Circle(center,radius)
+    #     window.render(.5)
+
+        # count = count+1
+        # print(count)
+        # center.x = center.x + 2*radius
+        # jake = rg.Circle(center,radius)
+        # jake.attach_to(window)
+        # window.render(.5)
+
+
+
+
 
 
 ###############################################################################
