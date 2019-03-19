@@ -314,7 +314,7 @@ def run_test_problem0c():
     window1.close_on_mouse_click()
 
     # A third test on ANOTHER window.
-    title = 'Test 3 of problem0c:  red circle + 10 circles'
+    title = 'Test 3 of problem0c:  red circle +    circles'
     window2 = rg.RoseWindow(600, 200, title)
 
     circle3 = rg.Circle(rg.Point(50, 50), 20)
