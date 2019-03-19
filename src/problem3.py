@@ -257,7 +257,7 @@ def problem3b(m, point1):
     y = 3
     total = 0
     for k in range(m):
-        problem3a(window,point1,y)
+        total = total + problem3a(window,point1,y)
         point1.x = x
         point1.y = point1.y + 60
         window.render()
