@@ -255,14 +255,18 @@ def problem3b(m, point1):
     window = rg.RoseWindow(400,650)
     x = point1.x
     y = 3
+    total = 0
     for k in range(m):
         problem3a(window,point1,y)
         point1.x = x
         point1.y = point1.y + 60
         window.render()
         y = y + 2
+
     window.render()
     window.close_on_mouse_click()
+    return total
+
 
 
 
